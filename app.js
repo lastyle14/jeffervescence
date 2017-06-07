@@ -25,16 +25,14 @@ addFlick(ev) {
     button.classList.add('button', 'primary')
     button.textContent = 'Promote'
     const flicklist = document.querySelector('#flickList')
-    flicklist.appendChild(button)
+    listItem.appendChild(button)
     button.addEventListener('click', this.moveUp.bind(this))
 },
 
 moveUp(ev) {
-    const newItem = document.createElement('li')
-    flickList.appendChild(newItem)
-    const flickname = document.querySelector('#flickname')
-    newItem.appendChild(flickname)
-    flicklist.insertBefore(newItem, ChildNode)
+    const button = ev.target
+    const listItem = button.parentElement
+    flickList.insertBefore(listItem, flickList.children[0])
 },
 
     renderListItem(flick) {
