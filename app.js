@@ -32,8 +32,9 @@ addFlick(ev) {
 moveUp(ev) {
     const button = ev.target
     const listItem = button.parentElement
-    flickList.insertBefore(listItem, flickList.children[0])
+    flickList.insertBefore(listItem, listItem.previousElementSibling)
 },
+
 
     renderListItem(flick) {
 const item = document.createElement('li')
