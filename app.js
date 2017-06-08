@@ -1,13 +1,11 @@
 const app = {
-    array : [],
     init(selectors) {
+        this.flicks = []
         this.max = 0
         this.list = document.querySelector(selectors.listSelector)
         document
             .querySelector(selectors.formSelector)
             .addEventListener('submit', this.addFlick.bind(this))
-            .flickname
-            .focus()
     },
 
 addFlick(ev) {
@@ -20,7 +18,7 @@ addFlick(ev) {
 
     const listItem = this.renderListItem(flick)
     this.list.appendChild(listItem)
-    this.array.push('flickname')
+    this.flicks.unshift(flickname)
 
     const button = document.createElement('button')
     button.setAttribute('id', 'promoteButton')
@@ -29,6 +27,7 @@ addFlick(ev) {
     const flicklist = document.querySelector('#flickList')
     listItem.appendChild(button)
     button.addEventListener('click', this.moveUp.bind(this))
+    this.list.insertBefore(listItem, this.list.firstChild)
 
     ++this.max
     f.reset()
@@ -45,6 +44,7 @@ moveUp(ev) {
     renderListItem(flick) {
 const item = document.createElement('li')
 item.textContent = flick.name
+item.dataset.id = flick.id
 return item
     },
 
