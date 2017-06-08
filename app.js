@@ -26,11 +26,6 @@ const app = {
     }
    },
 
-moveUp(ev) {
-    const button = ev.target
-    const listItem = button.parentElement
-    flickList.insertBefore(listItem, listItem.previousElementSibling)
-},
 
 addFlick(flick) {
     const listItem = this.renderListItem(flick)
@@ -53,8 +48,28 @@ addFlickViaForm(ev) {
 
     this.addFlick(flick)
 
+    // const listItem = this.renderListItem(flick)
+    // this.list.appendChild(listItem)
+
+    // const button = document.createElement('button')
+    // button.setAttribute('id', 'promoteButton')
+    // button.classList.add('button', 'primary')
+    // button.textContent = 'Promote'
+    // const flicklist = document.querySelector('#flickList')
+    // listItem.appendChild(button)
+    // button.addEventListener('click', this.moveUp.bind(this))
+    // this.list.insertBefore(listItem, this.list.firstChild)
+
+    // ++this.max
     f.reset()
-  },
+
+},
+
+moveUp(ev) {
+    const button = ev.target
+    const listItem = button.closest('li')
+    this.list.insertBefore(listItem, listItem.previousElementSibling)
+},
 
   save() {
     localStorage
@@ -72,6 +87,7 @@ addFlickViaForm(ev) {
  
 
     item.querySelector('button.remove').addEventListener('click', this.removeFlick.bind(this))
+    item.querySelector('.moveUp').addEventListener('click', this.moveUp.bind(this))
     return item
 },
 
