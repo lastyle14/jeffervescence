@@ -22,13 +22,13 @@ addFlick(ev) {
     this.flicks.unshift(flickname)
 
     const button = document.createElement('button')
-    button.setAttribute('id', 'promoteButton')
-    button.classList.add('button', 'primary')
-    button.textContent = 'Promote'
-    const flicklist = document.querySelector('#flickList')
-    listItem.appendChild(button)
-    button.addEventListener('click', this.moveUp.bind(this))
-    this.list.insertBefore(listItem, this.list.firstChild)
+    // button.setAttribute('id', 'promoteButton')
+    // button.classList.add('button', 'primary')
+    // button.textContent = 'Promote'
+    // const flicklist = document.querySelector('#flickList')
+    // listItem.appendChild(button)
+    // button.addEventListener('click', this.moveUp.bind(this))
+    // this.list.insertBefore(listItem, this.list.firstChild)
 
     ++this.max
     f.reset()
@@ -46,11 +46,17 @@ moveUp(ev) {
     const template = document.querySelector('.flick.template')
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
-    item.querySelector('flick-name')
-    item.textContent = flick.name
+    item.querySelector('.flick-name').textContent = flick.name
+    // item.textContent = flick.name
     item.dataset.id = flick.id
+
+    item.querySelector('button.remove').addEventListener('click', this.removeFlick)
     return item
     },
+
+removeFlick(ev) {
+   ev.target.closest('.flick').remove()
+},
 
 
 }
