@@ -6,6 +6,8 @@ const app = {
         document
             .querySelector(selectors.formSelector)
             .addEventListener('submit', this.addFlick.bind(this))
+            .flickname
+            .focus()
     },
 
 addFlick(ev) {
@@ -27,6 +29,10 @@ addFlick(ev) {
     const flicklist = document.querySelector('#flickList')
     listItem.appendChild(button)
     button.addEventListener('click', this.moveUp.bind(this))
+
+    ++this.max
+    f.reset()
+
 },
 
 moveUp(ev) {
