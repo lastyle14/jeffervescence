@@ -6,6 +6,7 @@
   border: 1px solid #ddd;
   clear: both;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0.75rem 1.25rem;
   transition: 0.25s;
@@ -16,6 +17,7 @@
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
+
 }
 
 .flick + .flick {
@@ -79,28 +81,34 @@ h1 {
     color: blue;
 }
 
-.movie {
+div.movie {
     border-style: solid;
     border-color: white;
-    position: absolute;
+    /*position: fixed;*/
     height: 300px;
-    width: 245px;
-    left: 510px;
-    top: 294px;
+    /*width: 245px;*/
+    padding: 0.75rem 1.25rem;
 }
 
-.tv {
+div.tv {
     border-style: solid;
     border-color: white;
-    position: absolute;
+    /*position: fixed;*/
     height: 300px;
-    width: 245px;
-    left: 147px;
-    top: 294px;
+    /*width: 245px;*/
+    padding: 0.75rem 1.25rem;
 }
 
 h3 {
     text-align: center;
     font-family: "Arial Black", Gadget, sans-serif;
     color: #FFFACD;
+}
+
+ul.movie {
+    border: none;
+}
+
+ul.tv {
+    border: none;
 }

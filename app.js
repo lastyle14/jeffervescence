@@ -94,6 +94,12 @@ class App {
     item
       .querySelector('button.edit')
       .addEventListener('click', this.edit.bind(this, flick))
+    item
+      .querySelector('button.muvie')
+      .addEventListener('click', this.addMovie.bind(this, flick))
+    item
+      .querySelector('button.Tv')
+      .addEventListener('click', this.addTV.bind(this, flick))
 
     return item
   }
@@ -193,6 +199,19 @@ class App {
       this.edit(flick, ev)
     }
   }
+
+addMovie (flick, ev) {
+    const listItem = ev.target.closest('.flick')
+    const movieList = document.querySelector('.flick.movie')
+    movieList.appendChild(listItem)
+}
+
+addTV (flick, ev) {
+    const listItem = ev.target.closest('.flick')
+    const movieList = document.querySelector('.flick.tv')
+    movieList.appendChild(listItem)
+}
+
 }
 
 const app = new App({
