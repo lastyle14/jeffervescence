@@ -89,12 +89,16 @@ moveD(ev) {
     item.classList.remove('template')
     item.dataset.id = flick.id
     item.querySelector('.flick-name').textContent = flick.name
+
+    if (flick.fav) {
+        item.classList.add('fav')
+    }
     // item.textContent = flick.name
  
 
     item.querySelector('button.remove').addEventListener('click', this.removeFlick.bind(this))
     item.querySelector('.moveUp').addEventListener('click', this.moveUp.bind(this))
-    item
+    item.querySelector('button.fav').addEventListener('click', this.favFlick.bind(this, flick))
     return item
 },
 
@@ -113,6 +117,15 @@ removeFlick(ev) {
    listItem.remove()
    this.save()
 },
+
+favFlick(flick, ev) {
+    console.log(arguments)
+    const listItem = ev.target.closest('.flick')
+
+    listItem.classList.toggle('fav')
+    flick.fav = !flcik.fav
+    this.save()
+},
 }  
        
 app.init ({
@@ -120,3 +133,4 @@ app.init ({
     listSelector: '#flickList',
     templateSelector: '.flick.template',
 })
+
