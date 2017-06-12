@@ -71,6 +71,12 @@ moveUp(ev) {
     this.list.insertBefore(listItem, listItem.previousElementSibling)
 },
 
+moveD(ev) {
+    const button = ev.target
+    const listItem = button.closest('li')
+    this.list.insertAfter(listItem, listItem.previousElementSibling)
+},
+
   save() {
     localStorage
       .setItem('flicks', JSON.stringify(this.flicks))
@@ -88,6 +94,7 @@ moveUp(ev) {
 
     item.querySelector('button.remove').addEventListener('click', this.removeFlick.bind(this))
     item.querySelector('.moveUp').addEventListener('click', this.moveUp.bind(this))
+    item
     return item
 },
 
