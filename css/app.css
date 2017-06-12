@@ -1,0 +1,106 @@
+.flick.template {
+  display: none;
+}
+
+.flick {
+  border: 1px solid #ddd;
+  clear: both;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  transition: 0.25s;
+  color: #FFFACD;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.flick + .flick {
+  border-top: 0;
+}
+
+.flick-name {
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: calc(100% - 200px);
+  margin-right: 1rem;
+}
+
+.actions.button-group {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.actions .button {
+  padding: .65em 0.8em;
+}
+
+.flick.fav {
+  background-color: #ffc656;
+  border-color: #ffa807;
+}
+
+.flick:first-child button.move-up,
+.flick:last-child button.move-down {
+  background-color: #ddd;
+  color: #eee;
+  cursor: not-allowed;
+}
+
+body {
+    background: #093028;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h1 {
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	font-size: 50px;
+	font-style: normal;
+	font-variant: normal;
+    color: #FFFACD;
+}
+
+.fa-arrow-up {
+    color: #98FB98;
+}
+
+.fa-arrow-down {
+    color: red;
+}
+
+.fa-trash-o {
+    color: blue;
+}
+
+.movie {
+    border-style: solid;
+    border-color: white;
+    position: absolute;
+    height: 300px;
+    width: 245px;
+    left: 510px;
+    top: 294px;
+}
+
+.tv {
+    border-style: solid;
+    border-color: white;
+    position: absolute;
+    height: 300px;
+    width: 245px;
+    left: 147px;
+    top: 294px;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #FFFACD;
+}
